@@ -7,26 +7,6 @@
 
   <script src="main.js"></script>
 
-
-  <!--
-  <script>
-
-  window.fn = {};
-
-  window.fn.open = function() {
-    var menu = document.getElementById('menu');
-    menu.open();
-  };
-
-  window.fn.load = function(page) {
-    var content = document.getElementById('content');
-    var menu = document.getElementById('menu');
-    content.load(page)
-      .then(menu.close.bind(menu));
-  };
-  </script>
--->
-
 </head>
 
 <body>
@@ -61,15 +41,21 @@
           Main
         </div>
       </ons-toolbar>
-      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-        Swipe right to open the menu!
-      </p>
-      <div style="width=auto">
-        <p style="text-align: center; opacity: 0.6">
-          Another text to check how the framework works.
+      <div style="text-align: center">
+        <h1>Find your position in the World</h1>
+        <p style="text-align: center; opacity: 0.6 ; padding-top: 20px;" >
+          The world is big, and is easy to get lost. This app takes advantage of the geolocation capabilities of your phone to find where you are. Now you will never get lost!
         </p>
+        <p><b>Latitud</b></p>
+        <p id="lat">------</p>
+        <p><b>Longitude</b></p>
+        <p id="long">------</p>
+        <br>
+        <ons-button modifier="large" onclick="someFunction()">Some button</ons-button>
+        <br>
+        <ons-button modifier="large">Another button</ons-button>
       </div>
-      <ons-button modifier="large" onclick="someFunction()">large</ons-button>
+
     </ons-page>
   </template>
 

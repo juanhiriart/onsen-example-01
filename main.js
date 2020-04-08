@@ -15,4 +15,6 @@ window.fn.load = function(page) {
 const someFunction = () =>
 {
   ons.notification.alert('You just pressed a button');
+  document.getElementById('lat').innerHTML = "000000";
+  document.getElementById('long').innerHTML = "000000";
 }
