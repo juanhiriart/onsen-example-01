@@ -11,3 +11,8 @@ window.fn.load = function(page) {
   content.load(page)
     .then(menu.close.bind(menu));
 };
+
+const someFunction = () =>
+{
+  ons.notification.alert('You just pressed a button');
+}
