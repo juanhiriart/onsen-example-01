@@ -36,6 +36,7 @@ window.fn.load = function(page) {
 const someFunction = () =>
 {
   ons.notification.alert('You just pressed a button');
+  //window.fn.load('settings.html')
 }
 
 function show_coords(position) {
@@ -58,15 +59,15 @@ function getGeoLocation() {
 function geo_error(error) {
     switch(error.code) {
         case error.TIMEOUT:
-            alert('Geolocation Timeout');
+            ons.notification.alert('Geolocation Timeout');
             break;
         case error.POSITION_UNAVAILABLE:
-            alert('Geolocation Position unavailable');
+            ons.notification.alert('Geolocation Position unavailable');
             break;
         case error.PERMISSION_DENIED:
-            alert('Geolocation Permission denied');
+            ons.notification.alert('Geolocation Permission denied');
             break;
         default:
-            alert('Geolocation returned an unknown error code: ' + error.code);
+            ons.notification.alert('Geolocation returned an unknown error code: ' + error.code);
     }
 }
