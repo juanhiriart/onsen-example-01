@@ -77,7 +77,7 @@ function geo_error(error) {
     }
 }
 
-
+//https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-in-your-web-apps.html
 function distance(lat1, lon1, lat2, lon2, unit)
 {
   var radlat1 = Math.PI * lat1/180;
