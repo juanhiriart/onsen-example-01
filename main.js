@@ -6,18 +6,18 @@ window.onload = function()
 {
   if((geo = getGeoLocation()))
   {
+    console.log('HTML5 Geolocation is supported.')
   }
   else
   {
       console.log('HTML5 Geolocation is not supported.')
   }
-  /*
+
   geo.watchPosition(show_coords, geo_error, {
     maximumAge: 1000,
     timeout: 300000,
     enableHighAccuracy: true
   });
-  */
 }
 
 window.fn.open = function() {
@@ -35,8 +35,14 @@ window.fn.load = function(page) {
 const someFunction = () =>
 {
   ons.notification.alert('You just pressed a button');
-  document.getElementById('lat').innerHTML = "000000";
-  document.getElementById('long').innerHTML = "000000";
+}
+
+function show_coords(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+
+    document.getElementById('lat').innerHTML = lat;
+    document.getElementById('long').innerHTML = lon;
 }
 
 function getGeoLocation() {
