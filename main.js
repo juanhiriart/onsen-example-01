@@ -16,3 +16,5 @@ const someFunction = () =>
 {
   ons.notification.alert('You just pressed a button');
 }
+
+ons.notification.alert('Hello');
