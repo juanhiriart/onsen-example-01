@@ -45,6 +45,11 @@ function show_coords(position) {
 
     document.getElementById('lat').innerHTML = lat;
     document.getElementById('long').innerHTML = lon;
+
+    var dist = distance(53.30058397483567, -2.1007242278630938, lat, lon, 'K');
+    var roundDist = Math.round(dist*1000)/1000;
+    //console.log(Math.round(dist*1000)/1000);
+    document.getElementById('dist').innerHTML = roundDist;
 }
 
 function getGeoLocation() {
@@ -70,4 +75,22 @@ function geo_error(error) {
         default:
             ons.notification.alert('Geolocation returned an unknown error code: ' + error.code);
     }
+}
+
+
+function distance(lat1, lon1, lat2, lon2, unit)
+{
+  var radlat1 = Math.PI * lat1/180;
+  var radlat2 = Math.PI * lat2/180;
+  var radlon1 = Math.PI * lon1/180;
+  var radlon2 = Math.PI * lon2/180;
+  var theta = lon1-lon2;
+  var radtheta = Math.PI * theta/180;
+  var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+  dist = Math.acos(dist);
+  dist = dist * 180/Math.PI;
+  dist = dist * 60 * 1.1515;
+  if (unit=="K") { dist = dist * 1.609344 }
+  if (unit=="N") { dist = dist * 0.8684 }
+  return dist;
 }
