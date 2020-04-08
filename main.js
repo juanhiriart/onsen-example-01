@@ -4,9 +4,11 @@ var geo;
 
 window.onload = function()
 {
+  console.log("on load");
   if((geo = getGeoLocation()))
   {
     console.log('HTML5 Geolocation is supported.')
+    ons.notification.alert('HTML5 Geolocation is supported.');
   }
   else
   {
